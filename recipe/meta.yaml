@@ -1,5 +1,5 @@
 {% set name = "jupyter_conda" %}
-{% set version = "2.4.1" %}
+{% set version = "2.4.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
   
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 3de7151ed2239286af036815130a8075d67ffcd2a4f6864a5810676bd84af1e1
+  sha256: 574a647b7accf325daae56d80b681e4db6a60da02d69e83d44089eb1f4bc7a1e
 
 build:
   skip: True  # [py2k]
-  number: 1000
+  number: 0
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
 
 requirements:
