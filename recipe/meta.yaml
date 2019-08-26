@@ -1,5 +1,5 @@
 {% set name = "jupyter_conda" %}
-{% set version = "2.5.1" %}
+{% set version = "3.0.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
   
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: b5ad6e68ea84c46ee954d368bcc5c72b684e997d555573fe5568c78e4c8148d5
+  sha256: dc28d2ba352562b5da90876f5bdf565f065c37f2d008a5f8a64fa1d26e6bd2a6
 
 build:
   noarch: python
