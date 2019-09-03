@@ -1,5 +1,5 @@
 {% set name = "jupyter_conda" %}
-{% set version = "3.0.0" %}
+{% set version = "3.1.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
   
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: dc28d2ba352562b5da90876f5bdf565f065c37f2d008a5f8a64fa1d26e6bd2a6
+  sha256: 28ee1a3dc1b29006935f54142a9804d333ba1900b324a2c20bf4fa682bcf63d9
 
 build:
   noarch: python
@@ -19,9 +19,9 @@ requirements:
     - python
     - pip
   run:
-    - python
+    - python >=3.5
     - notebook >=4.3.1
-    - nb_conda_kernels >=2.0.0
+    - nb_conda_kernels >=2.2.0
     - packaging
     - requests
     - typing
