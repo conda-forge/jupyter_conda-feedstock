@@ -11,8 +11,8 @@ source:
 
 build:
   noarch: python
-  number: 0
-  script: python -m pip install --no-deps --ignore-installed .
+  number: 1
+  script: "{{ PYTHON }} -m pip install . -vv --no-deps"
 
 requirements:
   host:
@@ -24,7 +24,7 @@ requirements:
     - nb_conda_kernels >=2.2.0
     - packaging
     - requests
-    - typing
+    - typing  # [py<=35]
 
 test:
   imports:
