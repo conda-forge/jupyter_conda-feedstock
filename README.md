@@ -5,7 +5,7 @@ Home: https://github.com/fcollonval/jupyter_conda
 
 Package license: BSD-3-Clause
 
-Feedstock license: BSD 3-Clause
+Feedstock license: BSD-3-Clause
 
 Summary: Conda environment and package access extension from within Jupyter
 
