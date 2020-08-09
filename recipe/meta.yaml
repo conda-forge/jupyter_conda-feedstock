@@ -1,5 +1,5 @@
 {% set name = "jupyter_conda" %}
-{% set version = "3.4.0" %}
+{% set version = "3.4.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 147c8151656b4fee70a0253401a4ca89e4aa0e63d301c11b18f8c27ba9987181
+  sha256: 94e0245d5c1bfb8380c124aa364fd4be672393a2e603260f0ed138f023aff334
 
 build:
   noarch: python
@@ -28,6 +28,10 @@ requirements:
 test:
   imports:
     - jupyter_conda
+  requires:
+    - pip
+  commands:
+    - pip check
 
 about:
   home: https://github.com/fcollonval/jupyter_conda
