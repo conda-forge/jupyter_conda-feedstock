@@ -28,6 +28,10 @@ requirements:
 test:
   imports:
     - jupyter_conda
+  requires:
+    - pip
+  commands:
+    - pip check
 
 about:
   home: https://github.com/fcollonval/jupyter_conda
