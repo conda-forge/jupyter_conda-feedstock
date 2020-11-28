@@ -1,46 +1,60 @@
-{% set name = "jupyter_conda" %}
-{% set version = "3.4.1" %}
+{% set name = "mamba_gator" %}
+{% set version = "4.0.0" %}
+{% set build_number = 0 %}
 
 package:
-  name: {{ name|lower }}
+  name: {{ name|lower }}-meta
   version: {{ version }}
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 94e0245d5c1bfb8380c124aa364fd4be672393a2e603260f0ed138f023aff334
+  sha256: 5a6ae3f0059d782e977dfaefaa636db50f9438fa8bdaf75857b9dc85681c29a5
 
 build:
   noarch: python
-  number: 0
-  script: {{ PYTHON }} -m pip install . -vv --no-deps
+  number: {{ build_number }}
 
-requirements:
-  host:
-    - python
-    - pip
-  run:
-    - python >=3.5
-    - notebook >=4.3.1
-    - nb_conda_kernels >=2.2.0
-    - packaging
-    - requests
-
-test:
-  imports:
-    - jupyter_conda
-  requires:
-    - pip
-  commands:
-    - pip check
+outputs:
+  - name: {{ name|lower }}
+    build:
+      number: {{ build_number }}
+      noarch: python
+    script: build_base.sh
+    requirements:
+      host:
+        - python >=3.5
+        - pip
+      run:
+        - python >=3.5
+        - notebook >=4.3.1
+        - packaging
+        - requests
+    test:
+      imports:
+        - mamba_gator
+      requires:
+        - pip
+      commands:
+        - pip check
+        - gator --help
+  # Provide package with old name for update
+  - name: jupyter_conda  
+    build:
+      number: {{ build_number }}
+      noarch: generic    
+    requirements:
+      run:
+        - {{ pin_subpackage(name, exact=True) }}
 
 about:
-  home: https://github.com/fcollonval/jupyter_conda
+  home: https://github.com/mamba-org/gator
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE
   summary: Conda environment and package access extension from within Jupyter
 
 extra:
+  feedstock-name: jupyter_conda
   recipe-maintainers:
     - fcollonval
     - dbast
