@@ -1,15 +1,13 @@
 About jupyter_conda
 ===================
 
-Home: https://github.com/fcollonval/jupyter_conda
+Home: https://github.com/mamba-org/gator
 
 Package license: BSD-3-Clause
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/jupyter_conda-feedstock/blob/master/LICENSE.txt)
 
 Summary: Conda environment and package access extension from within Jupyter
-
-
 
 Current build status
 ====================
@@ -30,6 +28,7 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-jupyter_conda-green.svg)](https://anaconda.org/conda-forge/jupyter_conda) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/jupyter_conda.svg)](https://anaconda.org/conda-forge/jupyter_conda) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/jupyter_conda.svg)](https://anaconda.org/conda-forge/jupyter_conda) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/jupyter_conda.svg)](https://anaconda.org/conda-forge/jupyter_conda) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-mamba_gator-green.svg)](https://anaconda.org/conda-forge/mamba_gator) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/mamba_gator.svg)](https://anaconda.org/conda-forge/mamba_gator) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/mamba_gator.svg)](https://anaconda.org/conda-forge/mamba_gator) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/mamba_gator.svg)](https://anaconda.org/conda-forge/mamba_gator) |
 
 Installing jupyter_conda
 ========================
@@ -40,10 +39,10 @@ Installing `jupyter_conda` from the `conda-forge` channel can be achieved by add
 conda config --add channels conda-forge
 ```
 
-Once the `conda-forge` channel has been enabled, `jupyter_conda` can be installed with:
+Once the `conda-forge` channel has been enabled, `jupyter_conda, mamba_gator` can be installed with:
 
 ```
-conda install jupyter_conda
+conda install jupyter_conda mamba_gator
 ```
 
 It is possible to list all of the versions of `jupyter_conda` available on your platform with:
