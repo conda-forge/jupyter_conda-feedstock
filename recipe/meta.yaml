@@ -1,5 +1,5 @@
 {% set name = "mamba_gator" %}
-{% set version = "4.0.0" %}
+{% set version = "4.1.0" %}
 {% set build_number = 0 %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 5a6ae3f0059d782e977dfaefaa636db50f9438fa8bdaf75857b9dc85681c29a5
+  sha256: d6020ad4ee44251e2147808434f706996fddb57b035d9c2b297fdef33b9d2fec
 
 build:
   noarch: python
@@ -39,10 +39,10 @@ outputs:
         - pip check
         - gator --help
   # Provide package with old name for update
-  - name: jupyter_conda  
+  - name: jupyter_conda
     build:
       number: {{ build_number }}
-      noarch: generic    
+      noarch: generic
     requirements:
       run:
         - {{ pin_subpackage(name, exact=True) }}
