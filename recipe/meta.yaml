@@ -1,6 +1,6 @@
 {% set name = "mamba_gator" %}
 {% set version = "4.1.0" %}
-{% set build_number = 0 %}
+{% set build_number = 1 %}
 
 package:
   name: {{ name|lower }}-meta
@@ -29,7 +29,10 @@ outputs:
         - jupyterlab_server
         - notebook >=4.3.1
         - packaging
-        - requests
+        - traitlets
+        - jupyter_client
+        - tornado
+
     test:
       imports:
         - mamba_gator
