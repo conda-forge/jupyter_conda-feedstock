@@ -1,6 +1,6 @@
 {% set name = "mamba_gator" %}
-{% set version = "4.1.0" %}
-{% set build_number = 1 %}
+{% set version = "5.0.0" %}
+{% set build_number = 0 %}
 
 package:
   name: {{ name|lower }}-meta
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: d6020ad4ee44251e2147808434f706996fddb57b035d9c2b297fdef33b9d2fec
+  sha256: ab306b7b3fbeb52d85467531d473a8fe2f71389fa33cb4f5a01aec39ca49272f
 
 build:
   noarch: python
@@ -18,28 +18,38 @@ outputs:
   - name: {{ name|lower }}
     build:
       number: {{ build_number }}
-      noarch: python
+      noarch: python  
+      entry_points:
+      - gator = mamba_gator.navigator.main:main
     script: build_base.sh
     requirements:
+      build:
+        - nodejs
       host:
-        - python >=3.5
+        - python >=3.6
         - pip
+        - jupyterlab >=3.0.0,<4
+        - jupyter-packaging >=0.7.9,<0.8.0
+        - setuptools >=40.8.0
+        - wheel
       run:
-        - python >=3.5
-        - jupyterlab_server
-        - notebook >=4.3.1
-        - packaging
-        - traitlets
+        - python >=3.6
         - jupyter_client
+        - jupyterlab_server
+        - packaging
         - tornado
+        - traitlets
 
     test:
       imports:
         - mamba_gator
       requires:
         - pip
+        - jupyterlab >=3.0.0,<4
       commands:
         - pip check
+        - jupyter server extension list 2>&1 | grep -ie "mamba_gator.*OK"
+        - jupyter labextension list 2>&1 | grep -ie "@mamba-org/gator-lab.*OK"
         - gator --help
   # Provide package with old name for update
   - name: jupyter_conda
