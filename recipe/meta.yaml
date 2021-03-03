@@ -18,7 +18,9 @@ outputs:
   - name: {{ name|lower }}
     build:
       number: {{ build_number }}
-      noarch: python
+      noarch: python  
+      entry_points:
+      - gator = mamba_gator.navigator.main:main
     script: build_base.sh
     requirements:
       build:
