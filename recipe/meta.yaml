@@ -45,6 +45,7 @@ outputs:
         - mamba_gator
       requires:
         - pip
+        - jupyterlab >=3.0.0,<4
       commands:
         - pip check
         - jupyter server extension list 2>&1 | grep -ie "mamba_gator.*OK"
