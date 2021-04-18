@@ -1,5 +1,5 @@
 {% set name = "mamba_gator" %}
-{% set version = "5.0.0" %}
+{% set version = "5.1.0" %}
 {% set build_number = 0 %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: ab306b7b3fbeb52d85467531d473a8fe2f71389fa33cb4f5a01aec39ca49272f
+  sha256: 3512917a2b77c01b2976b49f56c84008462f8352198bcdbba24ad0e069309d36
 
 build:
   noarch: python
@@ -18,9 +18,9 @@ outputs:
   - name: {{ name|lower }}
     build:
       number: {{ build_number }}
-      noarch: python  
+      noarch: python
       entry_points:
-      - gator = mamba_gator.navigator.main:main
+        - gator = mamba_gator.navigator.main:main
     script: build_base.sh
     requirements:
       build:
