@@ -1,5 +1,5 @@
 {% set name = "mamba_gator" %}
-{% set version = "5.1.0" %}
+{% set version = "5.1.1" %}
 {% set build_number = 0 %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 3512917a2b77c01b2976b49f56c84008462f8352198bcdbba24ad0e069309d36
+  sha256: 3963c9bb8149175d7c04941fe7e40e4fad0fab708fcf041efbe084041888ed5d
 
 build:
   noarch: python
