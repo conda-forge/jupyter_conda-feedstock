@@ -1,11 +1,11 @@
-About jupyter_conda
-===================
+About jupyter_conda-feedstock
+=============================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/jupyter_conda-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/mamba-org/gator
 
 Package license: BSD-3-Clause
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/jupyter_conda-feedstock/blob/main/LICENSE.txt)
 
 Summary: Conda environment and package access extension from within Jupyter
 
