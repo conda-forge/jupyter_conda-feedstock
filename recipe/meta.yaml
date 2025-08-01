@@ -29,6 +29,7 @@ outputs:
         - python {{ python_min }}
         - pip
         - hatchling >=1.9.0
+        - hatch-jupyter-builder
         - jupyterlab >=3.6.7,<5
         - jupyter-packaging >=0.7.9,<0.8.0
       run:
